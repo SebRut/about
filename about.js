@@ -14,7 +14,7 @@ exports.handle = function(input, source) {
             about += package["name"] + " v" + package["version"] + "\n";
         }
 
-        about += (friends != undefined ? friends.getAllFriends().length : 0) + " friends added\n";
+        about += (friends.getAllFriends.length != undefined ? friends.getAllFriends().length : 0) + " friends added\n";
         about += friends.getBlacklist().length + " user blacklisted\n";
 
         friends.messageUser(source, about);
