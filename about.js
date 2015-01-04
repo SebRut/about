@@ -1,7 +1,6 @@
 var friends = require("../../core/friends");
 //var logger = require('../../core/logger.js');
 var fs = require("fs");
-var readline = require("readline");
 
 exports.handle = function(input, source) {
     var input = input.split(" ");
@@ -16,7 +15,7 @@ exports.handle = function(input, source) {
 
 
 
-        friends.messageuser(source, about);
+        friends.messageUser(source, about);
 
         return true;
     }
