@@ -1,7 +1,7 @@
 {
-  "name": "Module Name",
-  "author": "Author Name",
-  "main": "module-file.js",
+  "name": "About",
+  "author": "SebRut",
+  "main": "about.js",
   "license": "MIT",
-  "description": "Description of the module"
+  "description": "Informations about the bot"
 }
