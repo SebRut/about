@@ -6,12 +6,21 @@ exports.handle = function(input, source) {
     var input = input.split(" ");
 
     if(input[0] == "about") {
-        var about = "";
+        var about = "BOT\n=====\n";
+
         if(fs.existsSync("package.json"))
         {
             var package = JSON.parse(fs.readFileSync("package.json"));
             about += package["name"] + " v" + package["version"] + "\n";
         }
+
+        about += friends.getAllFriends().length + " friends added\n";
+        about += friends.getBlacklist().length + " user blacklisted\n";
+
+        about += "USER\n=====\n";
+        about += "You're ";
+        if(!isAdmin(source)) about += "not ";
+        about += "Admin\n";
 
         friends.messageUser(source, about);
 
