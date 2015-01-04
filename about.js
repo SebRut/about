@@ -17,13 +17,7 @@ exports.handle = function(input, source) {
         about += friends.getAllFriends().length + " friends added\n";
         about += friends.getBlacklist().length + " user blacklisted\n";
 
-        about += "USER\n=====\n";
-        about += "You're ";
-        if(!isAdmin(source)) about += "not ";
-        about += "Admin\n";
-
         friends.messageUser(source, about);
-
         return true;
     }
 
