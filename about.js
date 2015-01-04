@@ -6,7 +6,7 @@ exports.handle = function(input, source) {
     var input = input.split(" ");
 
     if(input[0] == "about") {
-        var about = "BOT\n=====\n";
+        var about = "\nBOT\n=====\n";
 
         if(fs.existsSync("package.json"))
         {
@@ -14,7 +14,7 @@ exports.handle = function(input, source) {
             about += package["name"] + " v" + package["version"] + "\n";
         }
 
-        if(typeof friends.getAllFriends() == 'undefined' | friends.getAllFriends().length == 0) about += "No";
+        if(typeof friends.getAllFriends() == 'undefined' | friends.getAllFriends == null | friends.getAllFriends().length == 0) about += "No";
         else about += friends.getAllFriends().length;
         about += " friend(s) added\n";
         about += friends.getBlacklist().length + " user(s) blacklisted\n";
