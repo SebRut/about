@@ -14,8 +14,10 @@ exports.handle = function(input, source) {
             about += package["name"] + " v" + package["version"] + "\n";
         }
 
-        about += (friends.getAllFriends.length != NaN ? friends.getAllFriends().length : "0") + " friends added\n";
-        about += friends.getBlacklist().length + " user blacklisted\n";
+        if(friends.getAllFriends().length < 0) about += "No";
+        else about += friends.getAllFriends().length;
+        about += " friend(s) added\n";
+        about += friends.getBlacklist().length + " user(s) blacklisted\n";
 
         friends.messageUser(source, about);
         return true;
