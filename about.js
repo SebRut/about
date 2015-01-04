@@ -7,13 +7,11 @@ exports.handle = function(input, source) {
 
     if(input[0] == "about") {
         var about = "";
-        if(fs.existsSync("../../package.json"))
+        if(fs.existsSync("package.json"))
         {
-            var package = JSON.parse(fs.readFileSync("../../package.json"));
+            var package = JSON.parse(fs.readFileSync("package.json"));
             about += package["name"] + " v" + package["version"] + "\n";
         }
-
-
 
         friends.messageUser(source, about);
 
