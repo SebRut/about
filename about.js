@@ -8,7 +8,7 @@ exports.handle = function(input, source) {
 
     if(input[0] == "about") {
         var about = "";
-        var package = JSON.parse(fs.readFileAsync("../../package.json"));
+        var package = JSON.parse(fs.readFileSync("../../package.json"));
 
         about += package["name"] + " v" + package["version"] + "\n";
 
